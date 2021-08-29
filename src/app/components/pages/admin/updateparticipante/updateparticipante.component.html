@@ -1,0 +1,25 @@
+<div class="contenedor">
+
+    <div class="titulo">
+        <h2>Actualizar participante</h2>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 offset-md-1">
+            <input type="text" class="form-control" [(ngModel)]="participantes.id" placeholder="Id" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" [(ngModel)]="participantes.Nombre" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1">
+            <select class="form-control" [(ngModel)]="participantes.Vinculacion" aria-label="Default select example">
+            <option selected>Vinculación con la Universidad Distrital Francisco José de Caldas</option>
+            <option value="Docente de planta">Docente de Planta</option>
+            <option value="Docente de Vinculación Especial">Docente Vinculación Especial</option>
+            <option value="Estudiante">Estudiante</option>
+            <option value="Egresado">Egresado</option>
+            <option value="Funcionario">Funcionario</option>
+            <option value="Otro">No pertenezco a la universidad</option>
+          </select>
+            <input type="text" class="form-control" [(ngModel)]="participantes.Correo" placeholder="Correo" aria-label="Username" aria-describedby="basic-addon1">
+            <button class="btn btn-success btn-block" (click)="saveParticipante(participantesService.IdPadre)">Actualizar Participante</button>
+
+        </div>
+    </div>
+</div>

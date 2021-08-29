@@ -1,0 +1,41 @@
+<div class="contenedor">
+
+    <div class="titulo">
+        <h2>Consultar participantes</h2>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <input type="text" name="filterPart" id="" class="form-control" placeholder="Buscar..." [(ngModel)]="filterParticipante" aria-describedby="helpId">
+                <small id="helpId" class="text-muted">Busca a los participantes de los cursos por su nombre o vinculación</small>
+            </div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="col-md-4-offset-md-2">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Identificación</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Vinculación</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Actualizar</th>
+                        <th scope="col">Certificados</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let participante of participantesArreglo | filter:filterParticipante ">
+                        <th scope="row">{{participante.Id}}</th>
+                        <td>{{participante.Nombre}}</td>
+                        <td>{{participante.Vinculacion}}</td>
+                        <td>{{participante.Correo}}</td>
+                        <td routerLink="/participante-actualizar" class="btn btn-info bg-red" (click)="getParticipante(participante.Id, participante.Nombre, participante.Vinculacion, participante.Correo)"><i class="fas fa-user-edit"></i></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

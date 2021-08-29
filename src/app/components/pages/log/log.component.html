@@ -1,0 +1,42 @@
+<div class="contenedor">
+
+    <div class="titulo">
+        <h2>Log del sistema</h2>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <input type="text" name="filterPart" id="" class="form-control" placeholder="Buscar..." [(ngModel)]="filterLog" aria-describedby="helpId">
+                <small id="helpId" class="text-muted">Busca en los registros del log por descripción</small>
+            </div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="col-md-4-offset-md-2">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Usuario</th>
+                        <th scope="col">Certificado</th>
+                        <th scope="col">Curso</th>
+                        <th scope="col">Cédula</th>
+                        <th scope="col">Descripción</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let log of LogArreglo | filterlog:filterLog ">
+                        <th scope="row">{{log.Fecha}}</th>
+                        <td>{{log.User}}</td>
+                        <td>{{log.Id_certificado}}</td>
+                        <td>{{log.Id_curso}}</td>
+                        <td>{{log.Id}}</td>
+                        <td>{{log.Razon}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

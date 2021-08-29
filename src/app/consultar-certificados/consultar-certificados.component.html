@@ -1,0 +1,39 @@
+<div class="contenedor">
+
+    <div class="titulo">
+        <h2>Consultar Certificados por curso</h2>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <input type="text" name="filterPart" id="" class="form-control" placeholder="Buscar..." aria-describedby="helpId">
+                <small id="helpId" class="text-muted">Busca a los participantes de los cursos por su nombre </small>
+            </div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="col-md-4-offset-md-2">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Curso</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Certificado</th>
+                        <th scope="col">Eliminar</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let participante of certificadosArreglo | filter:filterCertificados ">
+                        <th scope="row">{{participante.Curso}}</th>
+                        <td>{{participante.Nombre}}</td>
+                        <td>{{participante.Id_Certificado}}</td>
+
+                        <td class="btn btn-danger" (click)="deleteCertificado(participante.Id_Certificado, participante.Nombre)"><i class="fas fa-minus-circle"></i></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

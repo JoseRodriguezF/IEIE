@@ -1,0 +1,29 @@
+<div class="contenedor">
+
+    <div class="titulo">
+        <h2>Consultar cursos</h2>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4-offset-md-2 " *ngFor="let curso of cursosArreglo ">
+
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h3 class="card-title"> {{curso.Nombre}} </h3>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"> Dictado en el mes {{curso.Mes}} del {{curso.year}} </li>
+                    <li class="list-group-item"> Con una intensidad horaria de {{curso.IH_letras}} ( {{curso.IH}} ) horas. </li>
+                </ul>
+                <div class="card-body">
+                    <a routerLink="/certificados-agregar" class="btn btn-primary">Añadir certificados</a>
+                </div>
+                <div class="card-body">
+                    <a routerLink="/eliminar-certificado" class="btn btn-info" (click)='data(curso.Id_Curso, curso.Nombre); '>Ver Certificados</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

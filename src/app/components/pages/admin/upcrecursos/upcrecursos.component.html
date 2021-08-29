@@ -1,0 +1,32 @@
+<div class="contenedor">
+    <div class="titulo">
+        <h2>Añadir curso</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-4 offset-md-1">
+            <input type="text" class="form-control" [(ngModel)]="curso.Nombre" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1">
+            <select class="form-control" [(ngModel)]="curso.Mes" aria-label="Default select example">
+            <option selected>Mes</option>
+            <option value="01">Enero</option>
+            <option value="02">Febrero</option>
+            <option value="03">Marzo</option>
+            <option value="04">Abril</option>
+            <option value="05">Mayo</option>
+            <option value="06">Junio</option>
+            <option value="07">Julio</option>
+            <option value="08">Agosto</option>
+            <option value="09">Septiembre</option>
+            <option value="10">Octubre</option>
+            <option value="11">Noviembre</option>
+            <option value="12">Diciembre</option>
+          </select>
+            <input type="text" class="form-control" [(ngModel)]="curso.IH" placeholder="Intensidad Horaria" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" [(ngModel)]="curso.IH_letras" placeholder="Intensidad Horaria en letras" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" [(ngModel)]="curso.year" placeholder="Año" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" [(ngModel)]="curso.Director" placeholder="Director" aria-label="Username" aria-describedby="basic-addon1">
+            <button class="btn btn-success btn-block" (click)='saveCurso()'>Registrar Curso</button>
+        </div>
+
+    </div>
+
+</div>

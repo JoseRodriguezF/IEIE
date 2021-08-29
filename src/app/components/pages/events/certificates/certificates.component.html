@@ -1,0 +1,41 @@
+<div class="contenedor">
+    <div class="titulo">
+        <h2>Certificados</h2>
+    </div>
+    <div class="panel">
+        <table class="tg">
+            <thead>
+                <tr>
+                    <input type="text" class="form-control" [(ngModel)]="idUsuario.id" placeholder="Identificación" aria-label="Username" aria-describedby="basic-addon1">
+
+                    <th><button class="btn btn-primary" (click)="getCertificados(idUsuario)"> Generar certificado</button></th>
+                </tr>
+            </thead>
+        </table>
+        <br><br><br>
+        <div>
+            <div class="col-md-4-offset-md-2">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Identificación</th>
+                            <th scope="col">Curso</th>
+                            <th scope="col">Ver PDF</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let certificado of certificadosArreglo ">
+                            <th scope="row">{{certificado.id}}</th>
+                            <td>{{certificado.Nombre}}</td>
+
+                            <!--<td href="" class="btn btn-info bg-red" (click)=" generatePDF(certificado.Nombre, certificado.id)"><i class="fas fa-file-pdf"></i></td>-->
+                            <td href="" class="btn btn-info bg-red" (click)=" getInfo(certificado.Nombre, certificado.id)"><i class="fas fa-file-pdf"></i></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

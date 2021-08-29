@@ -1,0 +1,29 @@
+<div class="contenedor">
+
+    <div class="titulo">
+        <h2>Verificar certificado</h2>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 offset-md-1">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Identificación</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon2" [(ngModel)]="certificadosv.Id">
+
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">IEIE-</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Número" aria-label="Username" aria-describedby="basic-addon2" [(ngModel)]="certificadosv.id_certificado">
+
+                <input type="text" class="form-control" placeholder="Año" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="certificadosv.year">
+                <div class="input-group-append">
+                    <button class="btn btn-success btn-block" type="button" (click)="verificarCertificado();">Consultar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

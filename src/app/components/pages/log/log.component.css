@@ -1,0 +1,20 @@
+.titulo h2 {
+    text-align: left;
+    color: white;
+    background-color: #343A40;
+    font-size: 25px;
+    font-weight: 60px;
+    font-family: 'Quicksand', serif;
+    margin-bottom: 40px;
+    height: 60px;
+    padding-top: 15px;
+    padding-left: 20px;
+}
+
+.contenedor {
+    margin-top: 10%;
+    margin-left: 15%;
+    width: 70%;
+    float: none;
+    margin-bottom: 300px;
+}

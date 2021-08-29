@@ -1,0 +1,17 @@
+<div class="contenedor">
+
+    <div class="titulo">
+        <h2>Agregar certificado</h2>
+    </div>
+    <div class="row">
+
+        <div class="col-md-4 offset-md-1">
+            <input type="text" class="form-control" [(ngModel)]="certificadosA.Id" placeholder="Identificación" aria-label="Username" aria-describedby="basic-addon1">
+            <select class="form-control" [(ngModel)]="certificadosA.Id_curso" aria-placeholder="Curso" aria-label="Default select example">
+            <option [value]="item.Id_Curso" *ngFor="let item of cursosArreglo"> {{item.Nombre}} </option>
+          </select>
+            <button class="btn btn-success btn-block" (click)='saveCertificado()'>Registrar certificado</button>
+        </div>
+
+    </div>
+</div>

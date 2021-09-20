@@ -1,0 +1,66 @@
+-- tkn1ritt5z5z8lpc.t_cursos definition
+
+CREATE TABLE `t_cursos` (
+  `Id_Curso` int NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `Mes` int NOT NULL,
+  `year` year NOT NULL,
+  `IH` int NOT NULL,
+  `IH_letras` varchar(25) NOT NULL,
+  `Director` text NOT NULL,
+  PRIMARY KEY (`Id_Curso`),
+  UNIQUE KEY `Nombre` (`Nombre`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+-- tkn1ritt5z5z8lpc.t_login definition
+
+CREATE TABLE `t_login` (
+  `Id_user` int NOT NULL AUTO_INCREMENT,
+  `User` varchar(50) NOT NULL,
+  `Pass` varchar(10) NOT NULL,
+  PRIMARY KEY (`Id_user`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+-- tkn1ritt5z5z8lpc.t_usuario definition
+
+CREATE TABLE `t_usuario` (
+  `Id` int NOT NULL,
+  `Nombre` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci NOT NULL,
+  `Vinculacion` varchar(30) NOT NULL,
+  `Correo` varchar(40) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+-- tkn1ritt5z5z8lpc.t_log definition
+
+CREATE TABLE `t_log` (
+  `Id_log` int NOT NULL AUTO_INCREMENT,
+  `User` varchar(50) NOT NULL,
+  `Id_certificado` int NOT NULL,
+  `Id_curso` int NOT NULL,
+  `Id` int NOT NULL,
+  `Fecha` datetime NOT NULL,
+  `Razon` text NOT NULL,
+  PRIMARY KEY (`Id_log`),
+  KEY `curso_f` (`Id_curso`),
+  KEY `Id_usuario_f` (`Id`),
+  CONSTRAINT `curso_f` FOREIGN KEY (`Id_curso`) REFERENCES `t_cursos` (`Id_Curso`),
+  CONSTRAINT `Id_usuario_f` FOREIGN KEY (`Id`) REFERENCES `t_usuario` (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+-- tkn1ritt5z5z8lpc.t_usuario_curso definition
+
+CREATE TABLE `t_usuario_curso` (
+  `Id` int NOT NULL,
+  `Id_Curso` int NOT NULL,
+  `Id_certificado` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`Id_certificado`),
+  KEY `Id_f` (`Id`),
+  KEY `Id_Curso` (`Id_Curso`),
+  CONSTRAINT `Id_Curso_f` FOREIGN KEY (`Id_Curso`) REFERENCES `t_cursos` (`Id_Curso`),
+  CONSTRAINT `Id_f` FOREIGN KEY (`Id`) REFERENCES `t_usuario` (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
